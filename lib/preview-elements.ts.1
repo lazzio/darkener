@@ -1,0 +1,79 @@
+export type PreviewElement = {
+  id: string;
+  label: string;
+  preview: (color: string, isDark?: boolean) => JSX.Element;
+};
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
+export const previewElements: PreviewElement[] = [
+  {
+    id: "button",
+    label: "Bouton",
+    preview: (color, isDark) => (
+      <Button
+        style={{ backgroundColor: color }}
+        className={cn(
+          "text-white hover:opacity-90 transition-opacity",
+          isDark ? "hover:bg-opacity-90" : ""
+        )}
+      >
+        Bouton d'action
+      </Button>
+    ),
+  },
+  {
+    id: "card",
+    label: "Carte",
+    preview: (color, isDark) => (
+      <Card 
+        className="p-4 w-full"
+        style={{ backgroundColor: color }}
+      >
+        <h3 className={cn(
+          "font-medium mb-2",
+          isDark ? "text-gray-100" : "text-gray-900"
+        )}>
+          Titre de la carte
+        </h3>
+        <p className={cn(
+          "text-sm",
+          isDark ? "text-gray-300" : "text-gray-700"
+        )}>
+          Contenu de la carte avec du texte descriptif
+        </p>
+      </Card>
+    ),
+  },
+  {
+    id: "alert",
+    label: "Alerte",
+    preview: (color, isDark) => (
+      <div
+        className={cn(
+          "p-4 rounded-lg border",
+          isDark ? "border-opacity-20" : "border-opacity-40"
+        )}
+        style={{ 
+          backgroundColor: color,
+          borderColor: color
+        }}
+      >
+        <div className={cn(
+          "font-medium mb-1",
+          isDark ? "text-gray-100" : "text-gray-900"
+        )}>
+          Message important
+        </div>
+        <p className={cn(
+          "text-sm",
+          isDark ? "text-gray-300" : "text-gray-700"
+        )}>
+          Cette alerte contient des informations essentielles.
+        </p>
+      </div>
+    ),
+  },
+];
