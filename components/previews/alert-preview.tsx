@@ -19,13 +19,13 @@ export function AlertPreview({ color, isDark }: PreviewProps) {
         "font-medium mb-1",
         isDark ? "text-gray-100" : "text-gray-900"
       )}>
-        Message important
+        Important message
       </div>
       <p className={cn(
         "text-sm",
         isDark ? "text-gray-300" : "text-gray-700"
       )}>
-        Cette alerte contient des informations essentielles.
+        This alert contains essential informations.
       </p>
     </div>
   );

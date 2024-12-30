@@ -14,13 +14,13 @@ export function CardPreview({ color, isDark }: PreviewProps) {
         "font-medium mb-2",
         isDark ? "text-gray-100" : "text-gray-900"
       )}>
-        Titre de la carte
+        Card title
       </h3>
       <p className={cn(
         "text-sm",
         isDark ? "text-gray-300" : "text-gray-700"
       )}>
-        Contenu de la carte avec du texte descriptif
+        Card content with a descriptive text
       </p>
     </Card>
   );

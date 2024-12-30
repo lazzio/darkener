@@ -13,7 +13,7 @@ export function ButtonPreview({ color, isDark }: PreviewProps) {
         isDark ? "hover:bg-opacity-90" : ""
       )}
     >
-      Bouton d'action
+      Action button
     </Button>
   );
 }

@@ -21,22 +21,22 @@ export default function Home() {
         <div className="space-y-4">
           <h1 className="text-4xl font-bold flex items-center gap-2">
             <Palette className="w-8 h-8" />
-            Générateur de Thème Sombre
+            Dark mode generator
           </h1>
           <p className="text-muted-foreground text-lg">
-            Générez automatiquement la version sombre d'une couleur pour votre thème
+            Generate automatically the dark version of a light mode color
           </p>
         </div>
 
         <Card className="p-6 space-y-6">
           <div className="flex items-center justify-between">
             <ColorInput
-              label="Couleur claire"
+              label="Your light color"
               value={lightColor}
               onChange={setLightColor}
             />
             <div className="space-y-2">
-              <p className="text-sm font-medium">Type d'élément</p>
+              <p className="text-sm font-medium">Component</p>
               <ElementSelector
                 value={elementType}
                 onChange={setElementType}
@@ -46,14 +46,14 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <div className="flex-1">
-              <p className="text-sm font-medium mb-2">Méthode de génération</p>
+              <p className="text-sm font-medium mb-2">Generation method</p>
               <Select value={method} onValueChange={setMethod}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Choisir une méthode" />
+                  <SelectValue placeholder="Choose a conversion method" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="hsl">Ajustement HSL</SelectItem>
-                  <SelectItem value="darken">Assombrissement</SelectItem>
+                  <SelectItem value="hsl">HSL adjustment</SelectItem>
+                  <SelectItem value="darken">Darkener</SelectItem>
                   <SelectItem value="invert">Inversion</SelectItem>
                 </SelectContent>
               </Select>
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
 
           <ColorInput
-            label="Version sombre générée"
+            label="Generated dark version"
             value={darkColor}
             readonly
           />
@@ -76,12 +76,12 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ColorPreview
             color={lightColor}
-            title="Prévisualisation claire"
+            title="Light preview"
             elementType={elementType}
           />
           <ColorPreview
             color={darkColor}
-            title="Prévisualisation sombre"
+            title="Dark preview"
             isDark
             elementType={elementType}
           />
